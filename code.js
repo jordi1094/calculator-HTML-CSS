@@ -1,6 +1,23 @@
-const formula = document.querySelector(".formula");
-const resultado = document.querySelector(".resultado")
-const botones = document.querySelectorAll(".boton");
+const displayValorAnterior = document.querySelector('.formula');
+const displayValorActual = document.querySelector('.resultado')
+const botonesNumero = document.querySelectorAll('.numero');
+const botonesOperador = document.querySelectorAll('.operando')
+
+const display = new Display(displayValorAnterior, displayValorActual);
+
+ botonesNumero.forEach(boton =>{
+    boton.addEventListener('click', () => display.agregarnumero(boton.innerHTML));
+ });
+
+botonesOperador.forEach(boton =>{
+    boton.addEventListener('click', () => display.computar(boton.value))
+})
+
+
+
+
+
+/*
 const memoria = 0
 botones.forEach(boton =>{
     boton.addEventListener("click",() => {
@@ -30,7 +47,4 @@ botones.forEach(boton =>{
     })
 });
 
-
-
-
-
+*/
